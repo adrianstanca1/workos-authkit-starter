@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Verify
+        env:
+          WORKOS_API_KEY: sk_test_placeholder_ci_build_only
+          WORKOS_CLIENT_ID: client_placeholder_ci_build_only
+          WORKOS_COOKIE_PASSWORD: "12345678901234567890123456789012"
+          NEXT_PUBLIC_WORKOS_REDIRECT_URI: http://localhost:3050/auth/callback
+        run: npm run verify
