@@ -13,18 +13,14 @@ export default async function Home() {
           WorkOS AuthKit
         </p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-          Next.js 16 starter
+          Welcome
         </h1>
         <p className="mt-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-          Session runs through{" "}
-          <code className="rounded bg-zinc-200 px-1.5 py-0.5 text-sm dark:bg-zinc-800">
-            src/proxy.ts
-          </code>{" "}
-          (not the repo root). Callback:{" "}
-          <code className="rounded bg-zinc-200 px-1.5 py-0.5 text-sm dark:bg-zinc-800">
-            /auth/callback
-          </code>
-          .
+          Sign in with your WorkOS account. After you authenticate you will be taken
+          to your dashboard.
+        </p>
+        <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-500">
+          Next.js 16 · AuthKit starter
         </p>
       </div>
 
